@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Demi Allah/Tuhan saya bekerja sendiri tidak melakukan copy paste dari pekerjaan teman-teman saya. -->
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"

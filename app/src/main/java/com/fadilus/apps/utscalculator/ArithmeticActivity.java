@@ -11,8 +11,6 @@ import java.text.DecimalFormat;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-// Demi Allah/Tuhan saya bekerja sendiri tidak melakukan copy paste dari pekerjaan teman-teman saya.
-
 /**
  * Created by fadhiilrachman on 20/10/18
  */
