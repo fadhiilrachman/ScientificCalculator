@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b35313</color>
+    <color name="colorPrimaryDark">#833a10</color>
+    <color name="colorAccent">#d98824</color>
+    <color name="colorAccentLight">#f1b254</color>
+    <color name="colorBtnDigit">#EEEEEE</color>
+    <color name="calcComponentActive">#212121</color>
+    <color name="calcComponentInactive">#BDBDBD</color>
+</resources>

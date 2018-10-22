@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UTS Calculator</string>
+    <string name="txt_welcomemsg_main">Scientific Calculator\nBy Muhammad Fadhiil Rachman</string>
+    <string name="btn_arithmetic_main">Arithmetic</string>
+    <string name="btn_logaritm_main">Logarithm</string>
+    <string name="btn_trigonometry_main">Trigonometry</string>
+    <string name="btn_perpangkatan_main">Exponent</string>
+</resources>
