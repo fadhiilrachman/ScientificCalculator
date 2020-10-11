@@ -9,21 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TemperatureConversionActivity"></activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ArithmeticActivity"
+        <activity
+            android:name=".ArithmeticActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".LogarithmActivity"
+        <activity
+            android:name=".LogarithmActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".PerpangkatanActivity"
+        <activity
+            android:name=".PerpangkatanActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".TrigonometryActivity"
+        <activity
+            android:name=".TrigonometryActivity"
             android:screenOrientation="portrait" />
     </application>
 

@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.btn_logarithm_main) Button btnLogarithm;
     @BindView(R.id.btn_trigonometry_main) Button btnTrigonometry;
     @BindView(R.id.btn_perpangkatan_main) Button btnPerpangkatan;
+    @BindView(R.id.btn_temperature_convert) Button btnTemperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +49,11 @@ public class MainActivity extends AppCompatActivity {
     public void btnPerpangkatanOnClick(View view) {
         Intent perpangkatanIntent = new Intent(this, PerpangkatanActivity.class);
         startActivity(perpangkatanIntent);
+    }
+
+    @OnClick(R.id.btn_temperature_convert)
+    public void btnTemperatureOnClick(View view){
+        Intent temperatureIntent = new Intent(this, TemperatureConversionActivity.class);
+        startActivity(temperatureIntent);
     }
 }
