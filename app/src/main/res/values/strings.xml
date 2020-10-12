@@ -5,4 +5,11 @@
     <string name="btn_logaritm_main">Logarithm</string>
     <string name="btn_trigonometry_main">Trigonometry</string>
     <string name="btn_perpangkatan_main">Exponent</string>
+    <string name="temperature">Temperature</string>
+    <string name="celcius">Celcius</string>
+    <string name="convert">Convert</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="farenheit">Farenheit</string>
+    <string name="reamur">Reamur</string>
+    <string name="temperature_value">temperature value</string>
 </resources>
