@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScientificCalculator.iml" filepath="$PROJECT_DIR$/.idea/modules/ScientificCalculator.iml" group="ScientificCalculator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="ScientificCalculator/app" />
+    </modules>
+  </component>
+</project>
