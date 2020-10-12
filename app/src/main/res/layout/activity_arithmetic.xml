@@ -7,6 +7,23 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/lbl_calculator_digit_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="48sp"
+        android:textColor="@color/calcComponentActive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <TextView
         android:id="@+id/lbl_calculator_digit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,7 +36,7 @@
         android:textColor="@color/calcComponentActive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/lbl_calculator_digit_history" />
 
     <Button
         android:id="@+id/btn_clear"
