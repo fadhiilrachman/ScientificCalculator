@@ -65,7 +65,6 @@ public class ArithmeticActivity extends AppCompatActivity {
         ADD, MINUS, DIVIDE, MULTIPLY
     }
 
-    ;
     private OperandType type;
 
     @Override
@@ -153,7 +152,7 @@ public class ArithmeticActivity extends AppCompatActivity {
                         if (!currentValue.contains("-")) {
                             lblCalcDigit.setText("-" + currentValue);
                         } else {
-                            lblCalcDigit.setText(currentValue.substring(1, currentValue.length()));
+                            lblCalcDigit.setText(currentValue.substring(1));
                         }
                     }
                     break;
