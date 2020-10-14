@@ -18,31 +18,53 @@ public class ArithmeticActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_digit_0)
     Button btnDigit0;
-    @BindView(R.id.btn_digit_1) Button btnDigit1;
-    @BindView(R.id.btn_digit_2) Button btnDigit2;
-    @BindView(R.id.btn_digit_3) Button btnDigit3;
-    @BindView(R.id.btn_digit_4) Button btnDigit4;
-    @BindView(R.id.btn_digit_5) Button btnDigit5;
-    @BindView(R.id.btn_digit_6) Button btnDigit6;
-    @BindView(R.id.btn_digit_7) Button btnDigit7;
-    @BindView(R.id.btn_digit_8) Button btnDigit8;
-    @BindView(R.id.btn_digit_9) Button btnDigit9;
-    @BindView(R.id.btn_clear) Button btnClear;
-    @BindView(R.id.btn_delete) Button btnDelete;
-    @BindView(R.id.btn_plus_min) Button btnPlusMin;
-    @BindView(R.id.btn_decimal_point) Button btnDecimalPoint;
-    @BindView(R.id.btn_plus) Button btnPlus;
-    @BindView(R.id.btn_minus) Button btnMinus;
-    @BindView(R.id.btn_divide) Button btnDivide;
-    @BindView(R.id.btn_multiply) Button btnMultiply;
-    @BindView(R.id.btn_result) Button btnResult;
+    @BindView(R.id.btn_digit_1)
+    Button btnDigit1;
+    @BindView(R.id.btn_digit_2)
+    Button btnDigit2;
+    @BindView(R.id.btn_digit_3)
+    Button btnDigit3;
+    @BindView(R.id.btn_digit_4)
+    Button btnDigit4;
+    @BindView(R.id.btn_digit_5)
+    Button btnDigit5;
+    @BindView(R.id.btn_digit_6)
+    Button btnDigit6;
+    @BindView(R.id.btn_digit_7)
+    Button btnDigit7;
+    @BindView(R.id.btn_digit_8)
+    Button btnDigit8;
+    @BindView(R.id.btn_digit_9)
+    Button btnDigit9;
+    @BindView(R.id.btn_clear)
+    Button btnClear;
+    @BindView(R.id.btn_delete)
+    Button btnDelete;
+    @BindView(R.id.btn_plus_min)
+    Button btnPlusMin;
+    @BindView(R.id.btn_decimal_point)
+    Button btnDecimalPoint;
+    @BindView(R.id.btn_plus)
+    Button btnPlus;
+    @BindView(R.id.btn_minus)
+    Button btnMinus;
+    @BindView(R.id.btn_divide)
+    Button btnDivide;
+    @BindView(R.id.btn_multiply)
+    Button btnMultiply;
+    @BindView(R.id.btn_result)
+    Button btnResult;
     @BindView(R.id.lbl_calculator_digit)
     TextView lblCalcDigit;
+    @BindView(R.id.lbl_calculator_digit_history)
+    TextView lblCalDigitHistory;
     private boolean isSecondValue = false, isResult = false;
     private double firstValue, secondValue;
+
     private enum OperandType {
         ADD, MINUS, DIVIDE, MULTIPLY
-    };
+    }
+
     private OperandType type;
 
     @Override
@@ -79,7 +101,7 @@ public class ArithmeticActivity extends AppCompatActivity {
     private View.OnClickListener onDigitClicked = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Button button = (Button)view;
+            Button button = (Button) view;
             String currentValue = lblCalcDigit.getText().toString();
             if (currentValue.length() < 12) {
                 if (currentValue.equals("0") || isResult) {
@@ -103,6 +125,7 @@ public class ArithmeticActivity extends AppCompatActivity {
                     firstValue = 0;
                     isSecondValue = false;
                     setOperandButtonEnabled(true);
+                    lblCalDigitHistory.setVisibility(View.GONE);
                     break;
                 case R.id.btn_decimal_point:
                     if (!currentValue.contains(".")) {
@@ -129,7 +152,7 @@ public class ArithmeticActivity extends AppCompatActivity {
                         if (!currentValue.contains("-")) {
                             lblCalcDigit.setText("-" + currentValue);
                         } else {
-                            lblCalcDigit.setText(currentValue.substring(1, currentValue.length()));
+                            lblCalcDigit.setText(currentValue.substring(1));
                         }
                     }
                     break;
@@ -144,6 +167,13 @@ public class ArithmeticActivity extends AppCompatActivity {
                 isSecondValue = true;
                 firstValue = Double.parseDouble(lblCalcDigit.getText().toString());
                 lblCalcDigit.setText("0");
+
+                lblCalDigitHistory.setVisibility(View.VISIBLE);
+                if (firstValue % 1 == 0) {
+                    lblCalDigitHistory.setText((String.valueOf(Math.round(firstValue))));
+                } else {
+                    lblCalDigitHistory.setText(String.valueOf(firstValue));
+                }
             }
 
             switch (view.getId()) {
@@ -161,6 +191,9 @@ public class ArithmeticActivity extends AppCompatActivity {
                     break;
             }
 
+            if (view instanceof Button) {
+                lblCalDigitHistory.setText(lblCalDigitHistory.getText() + " " + ((Button) view).getText());
+            }
             setOperandButtonEnabled(false);
         }
     };
@@ -192,6 +225,7 @@ public class ArithmeticActivity extends AppCompatActivity {
             isSecondValue = false;
             isResult = true;
             firstValue = 0;
+            lblCalDigitHistory.setVisibility(View.GONE);
         }
     };
 
